@@ -20,3 +20,19 @@ const login = (username, password) => {
         return response.data;
     });
 };
+
+const logout = () => {
+    localStorage.removeItem("user");
+};
+
+const getCurrentUser = () => {
+    return json.parse(localStorage.getItem("user"));
+};
+
+const AuthService = {
+    register,
+    login,
+    logout,
+    getCurrentUser,
+};
+export default AuthService;

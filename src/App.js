@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 //import logo from './logo.svg';
 //import './App.css';
+import Login from './components/Login'
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -18,9 +19,9 @@ class App extends Component {
       //   </p>
       // </div>
 
-      <div>
-        <h1>React Hooks jwt auth</h1>
-      </div>
+      
+        <Login />
+     
     );
   }
 }
