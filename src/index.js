@@ -1,12 +1,28 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import App from './App';
 import './index.css';
 
-ReactDOM.render(
-  <App />,
-  document.getElementById('root')
-);
+//import {createRoot} from 'react-dom/client';
+//import App from './App';
+import {BrowserRouter as Router} from 'react-router-dom';
+
+// const rootElement = document.getElementById('root');
+// const root = createRoot(rootElement);
+
+
+// ReactDOM.render(
+//   <App />,
+//   document.getElementById('root')
+// );
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <Router>
+      <App />
+    </Router>
+ );
 
 
 // git init
@@ -28,4 +44,14 @@ ReactDOM.render(
 //npm install axios
 
 //npm install react-validation validator
+
+
+We’re gonna use these modules:
+
+React 18/17
+react-router-dom 6.4.0
+axios 0.27.2
+react-validation 3.0.7
+Bootstrap 4
+validator 13.7.0
 */

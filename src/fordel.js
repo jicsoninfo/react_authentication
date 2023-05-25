@@ -208,6 +208,24 @@ if (checkBtn.context._errors.length === 0) {
 
 // Or Formik and Yup:
 // React Form Validation example with Hooks, Formik and Yup
+//=====================================================================================================
+// Support Router functions
+// From the react-router-dom v6, the support for history has been deprecated. So we need a wrapper (HOC) that can use new useful hooks.
+
+// In src folder, create common/with-router.js file with following code:
+
+import { useLocation, useNavigate, useParams } from "react-router-dom";
+
+export const withRouter = (Component) => {
+  function ComponentWithRouterProp(props) {
+    let location = useLocation();
+    let navigate = useNavigate();
+    let params = useParams();
+    return <Component {...props} router={{ location, navigate, params }} />;
+  }
+  return ComponentWithRouterProp;
+};
+
 
 //==============================================================================================================================
 // Login Page

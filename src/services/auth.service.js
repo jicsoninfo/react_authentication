@@ -10,6 +10,7 @@ const register=(username, email, password) => {
 };
 
 const login = (username, password) => {
+    //return true;
     return axios.post(API_URL + "signin", {
         username,
         password,
@@ -26,7 +27,7 @@ const logout = () => {
 };
 
 const getCurrentUser = () => {
-    return json.parse(localStorage.getItem("user"));
+    return JSON.parse(localStorage.getItem("user"));
 };
 
 const AuthService = {
