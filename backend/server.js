@@ -32,7 +32,7 @@ const Role = db.role;
 //     });
 //     Role.create({
 //         id:2,
-//         name: "moderateor"
+//         name: "moderator"
 //     });
 //     Role.create({
 //         id: 3,
@@ -44,9 +44,29 @@ db.sequelize.sync();
 
 // routes
 require('./app/routes/auth.routes')(app);
-require('./app/routes/user.routes');
+require('./app/routes/user.routes')(app);
 
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () =>{
-    console.log(`Server is running on prot ${PORT}.`);
+    console.log(`Server is running on port ${PORT}.`);
 });
+
+
+/*
+
+http://localhost:8080/api/auth/signup
+body->row->json
+{
+    "username": "admin",
+    "email" : "admin@admin.com",
+    "password":"123456789",
+    "roles":["admin", "admin"]
+}
+{
+    "username": "mod",
+    "email" : "mod@mod.com",
+    "password":"123456789",
+    "roles":["moderator", "user"]
+}
+
+*/
