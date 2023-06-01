@@ -26,7 +26,7 @@ exports.signup = (req, res)=>{
             });
         }else{
             user.setRoles([1]).then(()=>{
-                res.send({message: "User waas registered successfully!"})
+                res.send({message: "User was registered successfully!"})
             });
         }
     }).catch(err=>{
