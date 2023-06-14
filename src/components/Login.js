@@ -12,7 +12,7 @@ const required=(value) =>{
     if(!value){
         return(
             <div className="alert alert-danger" role="alert">
-                This field is reuaired!
+                This field is requaired!
             </div>
         )
     }

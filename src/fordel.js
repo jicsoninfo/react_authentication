@@ -363,3 +363,12 @@ const Login = () => {
 };
 
 export default Login;
+
+
+//=====================
+// RewriteEngine On
+// RewriteBase /
+// RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+// RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+// # Remove "index.html"
+// RewriteRule (.*)index\.html$ /$1 [R=301,L]
